@@ -1,0 +1,22 @@
+{
+  "name": "wc-order-processor",
+  "version": "1.0.0",
+  "description": "WiseCracker order processor deals with data from Shopify and Amazon MWS",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "author": "kahrens",
+  "license": "MIT",
+  "dependencies": {
+    "iron_mq": "^0.9.1",
+    "mws-api": "^1.1.4",
+    "newrelic": "^1.24.0",
+    "shopify-api-node": "^2.2.0",
+    "xero": "0.0.8"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  }
+}
