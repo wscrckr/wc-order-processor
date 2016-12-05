@@ -4,5 +4,5 @@
 Tool for processing WiseCracker orders.
 
 ### Stores
-Shopify
-Amazon Marketplace
+* Shopify
+* Amazon Marketplace
