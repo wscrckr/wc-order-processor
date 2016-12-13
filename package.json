@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "iron_mq": "^0.9.1",
+    "js2xmlparser": "^2.0.2",
     "mws-api": "^1.1.4",
     "newrelic": "^1.24.0",
     "request": "^2.79.0",
