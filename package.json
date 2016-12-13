@@ -14,6 +14,7 @@
     "mws-api": "^1.1.4",
     "newrelic": "^1.24.0",
     "request": "^2.79.0",
+    "request-promise": "^4.1.1",
     "shopify-api-node": "^2.2.0"
   },
   "devDependencies": {
