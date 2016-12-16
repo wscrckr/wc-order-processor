@@ -10,7 +10,7 @@ describe('Shopify API', function() {
   });
 
   it('gets recent orders', function(done) {
-    shopify.getOrders(null)
+    shopify.getOrdersSince(null)
       .then(function(orders) {
         console.log('We have some orders: ' + orders.length);
         done();
