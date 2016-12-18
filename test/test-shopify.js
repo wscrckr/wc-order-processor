@@ -16,7 +16,7 @@ describe('Shopify API', function() {
         done();
       })
       .catch(function(err) {
-        console.error(err);
+        assert.error(err);
         done();
       });
   });

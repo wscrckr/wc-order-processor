@@ -6,5 +6,18 @@ describe('Amazon Marketplace Web Service API', function() {
     var initResult = mws.init();
     assert(initResult, 'Failed Amazon MWS Connection.');
     done();
+  });
+
+  it('lists orders', function(done) {
+    var testDate = new Date(2016,1,1);
+    mws.listOrders(testDate)
+      .then(function(result, metadata) {
+        console.log('There are ' + result.result.length + ' orders.');
+        done();
+      })
+      .catch(function(err) {
+        assert.error(err);
+        done();
+      });
   })
 });
