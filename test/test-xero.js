@@ -13,7 +13,8 @@ describe('Xero API', function() {
     var orderBy = 'Date DESC';
     var pageNum = 1;
 
-    xero.getInvoices(whereFilter, orderBy, pageNum, function(body) {
+    xero.getInvoices(whereFilter, orderBy, pageNum)
+    .then(function(body) {
       console.log('There are: ' + body.Invoices.length + ' invoices.');
       console.log('Most recent SHOP invoice: ' + body.Invoices[0].InvoiceNumber);
       console.log('Most recent SHOP id (ref): ' + body.Invoices[0].Reference);
