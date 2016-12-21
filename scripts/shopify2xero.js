@@ -20,24 +20,21 @@ var checkForNewOrders = function checkForNewOrders() {
     console.log('Xero newest invoice: ' + invoice.InvoiceNumber);
 
     // Get the Shopify orders since that reference
-    shopify.getOrdersSince(reference)
-    .then(function(orders) {
-      if (orders.length > 0) {
-        console.log('Holy cow we are behind by ' + orders.length + ' orders');
-        for (var i=0; i < orders.length; i++) {
-          var order = orders[i];
-          processOrder(order);
-        }
-      } else {
-        console.log('We are all caught up');
+    return shopify.getOrdersSince(reference);
+  })
+  .then(function(orders) {
+    if (orders.length > 0) {
+      console.log('Holy cow we are behind by ' + orders.length + ' orders');
+      for (var i=0; i < orders.length; i++) {
+        var order = orders[i];
+        processOrder(order);
       }
-    })
-    .catch(function(err) {
-      console.error('getOrdersSince failed: ' + err);
-    });
+    } else {
+      console.log('We are all caught up');
+    }
   })
   .catch(function(err) {
-    console.error('getInvoices failed: ' + err);
+    console.error('checkForNewOrders failed: ' + err);
   });
 }
 
@@ -84,7 +81,7 @@ var processOrder = function(shopifyOrder) {
   .then(function(xeroContactResponse) {
     var xeroContact = xeroContactResponse.Contacts[0];
     console.log('Contact id for ' + customerName + ' is ' + xeroContact.ContactID);
-    return wisecracker.addXeroInvoice(shopifyOrder, xeroContact)
+    return wisecracker.addShopifyOrder2Xero(shopifyOrder, xeroContact)
   })
   .then(function(xeroInvoice) {
      console.log('Xero Invoice ' + shopifyOrder.order_number + ' added/updated.');
