@@ -58,11 +58,21 @@ var checkOrder = function checkOrders(orderNum) {
 var processOrder = function(shopifyOrder) {
   
   var shopifyCustomer = shopifyOrder.customer;
-  var customerName = shopifyCustomer.first_name.trim();
-  customerName += ' ' + shopifyCustomer.last_name.trim();
+  var customerName = '';
+  
+  // Null checks
+  if (shopifyCustomer.first_name != null) {
+    customerName = shopifyCustomer.first_name.trim();
+  }
+  if (shopifyCustomer.last_name != null) {
+    customerName += ' ' + shopifyCustomer.last_name.trim();
+  }
+  
+  // If they only have a last name we'll trim the leading space
+  customerName = customerName.trim();
   console.log('Processing Order: ' + shopifyOrder.order_number + ' (' + customerName + ')');
   
-  wisecracker.lookupCustomerInXero(shopifyCustomer)
+  wisecracker.lookupCustomerInXero(customerName)
   .then(function(xeroResponse) {
 
     // If the customer is not found, add them to Xero
