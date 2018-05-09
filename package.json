@@ -10,6 +10,7 @@
   "author": "kahrens",
   "license": "MIT",
   "dependencies": {
+    "commander": "^2.15.1",
     "iron_mq": "^0.9.1",
     "js2xmlparser": "^2.0.2",
     "mws-api": "^1.1.4",

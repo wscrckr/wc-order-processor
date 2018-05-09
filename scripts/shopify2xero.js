@@ -2,6 +2,8 @@ const shopify = require('../lib/shopify.js');
 const xero = require('../lib/xero.js');
 const wisecracker = require('../lib/wisecracker.js');
 
+var program = require('commander');
+
 // Initialize the libraries
 xero.init();
 shopify.init();
@@ -101,5 +103,17 @@ var processOrder = function(shopifyOrder) {
    });
 }
 
-checkForNewOrders();
-// checkOrder(-1);
+program
+  .option('--order [id]', 'Load a specific order')
+  .parse(process.argv);
+
+if (program.order) {
+  // Check just for this specific order
+  console.log('Checking just for order', program.order);
+  checkOrder(program.order);
+} else {
+  // Default to trying all orders
+  console.log(program);
+  console.log('Checking for all new orders');
+  checkForNewOrders();
+}
