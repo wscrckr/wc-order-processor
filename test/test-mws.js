@@ -18,8 +18,7 @@ describe('Amazon Marketplace Web Service API', function() {
         done();
       })
       .catch(function(err) {
-        assert.error(err);
-        done();
+        done(err);
       });
   })
 });
