@@ -11,15 +11,13 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.15.1",
-    "iron_mq": "^0.9.1",
     "js2xmlparser": "^2.0.2",
-    "mws-api": "^1.1.4",
-    "newrelic": "^1.24.0",
+    "mws-api": "^3.0.0",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "shopify-api-node": "^2.2.0"
   },
   "devDependencies": {
-    "mocha": "^3.1.2"
+    "mocha": "^6.2.1"
   }
 }
