@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "^2.15.1",
+    "dotenv": "^8.2.0",
     "js2xmlparser": "^2.0.2",
     "mws-api": "^3.0.0",
     "request": "^2.79.0",
