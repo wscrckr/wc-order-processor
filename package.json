@@ -19,6 +19,6 @@
     "shopify-api-node": "^2.2.0"
   },
   "devDependencies": {
-    "mocha": "^6.2.1"
+    "mocha": "^7.1.1"
   }
 }
