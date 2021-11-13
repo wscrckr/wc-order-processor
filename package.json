@@ -5,20 +5,26 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "start": "node index",
     "test": "./node_modules/mocha/bin/mocha"
   },
   "author": "kahrens",
   "license": "MIT",
   "dependencies": {
     "commander": "^2.15.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "js2xmlparser": "^2.0.2",
+    "jwt-decode": "^3.1.2",
+    "morgan": "^1.10.0",
     "mws-api": "^3.0.0",
-    "request": "^2.79.0",
-    "request-promise": "^4.1.1",
-    "shopify-api-node": "^2.2.0"
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "shopify-api-node": "^3.8.0",
+    "xero-node": "^4.17.0"
   },
   "devDependencies": {
-    "mocha": "^7.1.1"
+    "mocha": "^7.2.0"
   }
 }
