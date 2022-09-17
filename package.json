@@ -22,7 +22,7 @@
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
     "shopify-api-node": "^3.8.0",
-    "xero-node": "^4.17.0"
+    "xero-node": "^4.27.1"
   },
   "devDependencies": {
     "mocha": "^7.2.0"
